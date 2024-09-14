@@ -1,6 +1,13 @@
 #include "Keyboard.h"
 #include <map>
 
+/*
+For Seeduino XIAO board add Boards file
+https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
+Install Seed SAMD Boards
+
+*/
+
 //Disable USB Diagnostics COM Port
 #define DISABLE_USB_SERIAL
 
