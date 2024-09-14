@@ -13,6 +13,7 @@ char Program_ID[] = "CW USB Key Decoder";
 char VerNo[] = "0.5";
 char ProgDate[] = "08-09-2024";
 char Copywrite[] = "Copyright (C) 2024, Marek Wagrodzki, All Rights Reserved.";
+char License[] = "GNU GENERAL PUBLIC LICENSE";
 // *****************************************
 
 unsigned long DotTime = 200;
@@ -169,6 +170,7 @@ void loop() {
     DepressDurationTime = millis() - DepressStartTime;
     if ((DepressDurationTime > 1000) && (MorseSign.length() > 0))
     {
+      //if for different usage mode - like sending Leter, just  DashDot signs
       if(false)
       {
       }
