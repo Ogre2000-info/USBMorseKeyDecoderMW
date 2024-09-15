@@ -5,7 +5,7 @@
 For Seeduino XIAO board add Boards file
 https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
 Install Seed SAMD Boards
-
+test
 */
 
 //Disable USB Diagnostics COM Port
