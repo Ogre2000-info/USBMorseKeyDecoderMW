@@ -101,7 +101,7 @@ int getConstantValue(const String& name) {
   if (it != MorseConstantMap.end()) {
     return it->second;
   }
-  return 0x0; // Return Value if code is not found.
+  return 0x0; // Return Value if code is not found
 }
 
 void setup() {
