@@ -9,8 +9,8 @@ test
 */
 
 //Disable USB Diagnostics COM Port
+//Currently not working!
 #define DISABLE_USB_SERIAL
-
 
 #define KEY_PIN   7 // Morse Key Pin
 
