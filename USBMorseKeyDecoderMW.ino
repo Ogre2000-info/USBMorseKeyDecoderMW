@@ -13,6 +13,9 @@ test
 #define DISABLE_USB_SERIAL
 
 #define KEY_PIN   7 // Morse Key Pin
+#define BUZZER    8 // Buzzer pin
+
+int ToneFrequency = 1100;
 
 // Program Description:
 // *****************************************
@@ -95,6 +98,7 @@ std::map<String, int> MorseConstantMap = {
 
 };
 
+
 //Map morse string ".-" to value Function
 int getConstantValue(const String& name) {
   auto it = MorseConstantMap.find(name);
@@ -106,8 +110,9 @@ int getConstantValue(const String& name) {
 
 void setup() {
   Keyboard.begin();
-  // Enable pullup resistor for Morse Key
-  pinMode(KEY_PIN, INPUT_PULLUP);
+
+  pinMode(KEY_PIN, INPUT_PULLUP); //MorseKey input
+  pinMode(BUZZER, OUTPUT); //Buzzer output
   
   //For test only - blink Board LED (pin 13)
   digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
@@ -122,6 +127,9 @@ void setup() {
   delay(1000);                       // wait for a second
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(1000);                       // wait for a second
+  tone(BUZZER, ToneFrequency);
+  delay(1000);
+  noTone(BUZZER);
 }
 
 void loop() {
@@ -131,7 +139,15 @@ void loop() {
   
   // Light ON Board LED when Morse Key is pressed
   //Remember - LED_BUILTIN works in negative logic
-  if (!CurrentKeyState) {digitalWrite(LED_BUILTIN, HIGH);} else {digitalWrite(LED_BUILTIN, LOW);}
+  if (!CurrentKeyState)
+  {
+    digitalWrite(LED_BUILTIN, HIGH);
+    noTone(BUZZER);
+  } else
+  {
+    digitalWrite(LED_BUILTIN, LOW);
+    tone(BUZZER, ToneFrequency);    
+  }
 
   //Glue Morse Key from .-
   if (CurrentKeyState != LastKeyState ) {
@@ -162,6 +178,7 @@ void loop() {
       else if (PressDurationTime > LetterGapTime)
       {
 //If PressTime is longer than usual
+        MorseSign = ".-.-";
 //Empty at the moment
       }
       else
@@ -185,6 +202,6 @@ void loop() {
   }
 
 LastKeyState = CurrentKeyState;
-delay(50);
+delay(40);
 
 } //  End of the Main Loop
