@@ -91,7 +91,7 @@ std::map<String, int> MorseConstantMap = {
 { "--..", 0x5A },             //Z
 { "..--", 0x20},              //Space
 { "...-.-", 0x2A},            //*
-{ "....-...-", 0x5C }        //BackSlash
+{ "....-...-", 0x5C }         //BackSlash
 
 };
 
@@ -172,20 +172,14 @@ void loop() {
     }
 
   }
-  if (!CurrentKeyState)
+
+  if (!CurrentKeyState) //When depressed
   {
     DepressDurationTime = millis() - DepressStartTime;
     if ((DepressDurationTime > 1000) && (MorseSign.length() > 0))
     {
-      //if for different usage mode - like sending Leter, just  DashDot signs
-      if(false)
-      {
-      }
-      else
-      {
         // ConstantMap Decoding
         Keyboard.write(getConstantValue(MorseSign));
-      }
       MorseSign = "";
     }
   }
