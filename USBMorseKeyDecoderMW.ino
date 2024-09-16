@@ -25,7 +25,7 @@ char License[] = "GNU GENERAL PUBLIC LICENSE";
 
 unsigned long DotTime = 200;
 unsigned long DashTime = DotTime * 3;
-unsigned long WordGapTime = DotTime * 3;
+unsigned long LetterGapTime = DotTime * 3;
 unsigned long PressStartTime = 0;
 unsigned long DepressStartTime = 0;
 unsigned long PressDurationTime = 0;
@@ -139,7 +139,7 @@ void loop() {
     if(CurrentKeyState)
     {
       PressStartTime = millis();
-      if (DepressDurationTime > WordGapTime)
+      if (DepressDurationTime > LetterGapTime)
       {
         MorseSign = "";
       }
@@ -159,7 +159,7 @@ void loop() {
       {
         MorseSign = MorseSign + "-";
       }
-      else if (PressDurationTime > WordGapTime)
+      else if (PressDurationTime > LetterGapTime)
       {
 //If PressTime is longer than usual
 //Empty at the moment
