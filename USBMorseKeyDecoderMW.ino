@@ -6,6 +6,10 @@ Software distributed under GNU GENERAL PUBLIC LICENSE
 #include "Keyboard.h"
 #include <map>
 
+/*                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+*/
+
 /*
 For Seeduino XIAO board add Boards file
 https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
