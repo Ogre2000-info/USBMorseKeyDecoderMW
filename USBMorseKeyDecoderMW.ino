@@ -1,3 +1,8 @@
+/*
+2024 (C) Marek Wągrodzki
+Software distributed under GNU GENERAL PUBLIC LICENSE
+*/
+
 #include "Keyboard.h"
 #include <map>
 
@@ -8,6 +13,15 @@ Install Seed SAMD Boards
 test
 */
 
+// Program Description:
+// *****************************************
+char Program_ID[] = "CW USB Key Decoder";
+char VerNo[] = "1.0";
+char ProgDate[] = "25-09-2024";
+char Copywrite[] = "Copyright (C) 2024, Marek Wagrodzki, All Rights Reserved.";
+char License[] = "GNU GENERAL PUBLIC LICENSE";
+// *****************************************
+
 //Disable USB Diagnostics COM Port
 //Currently not working!
 #define DISABLE_USB_SERIAL
@@ -16,15 +30,6 @@ test
 #define BUZZER    8 // Buzzer pin
 
 int ToneFrequency = 1100;
-
-// Program Description:
-// *****************************************
-char Program_ID[] = "CW USB Key Decoder";
-char VerNo[] = "0.5";
-char ProgDate[] = "08-09-2024";
-char Copywrite[] = "Copyright (C) 2024, Marek Wagrodzki, All Rights Reserved.";
-char License[] = "GNU GENERAL PUBLIC LICENSE";
-// *****************************************
 
 unsigned long DotTime = 200;
 unsigned long DashTime = DotTime * 3;
