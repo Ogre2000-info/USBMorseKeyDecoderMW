@@ -5,5 +5,5 @@ by
 Marek wągrodzki - Ogre2000
 
 # Description
-It is Staight CW Morse Decoder on Seeeduino XIAO board.
+It is a Staight CW Morse Decoder on Seeeduino XIAO board.
 I've designed small box to connect USB, Jack and buzzer.
