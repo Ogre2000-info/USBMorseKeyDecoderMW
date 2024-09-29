@@ -2,7 +2,7 @@
 ## Just for fun and learning
 
 by
-Marek wągrodzki - Ogre2000
+Marek Wągrodzki - Ogre2000
 
 # Description
 It is a Staight CW Morse Decoder on Seeeduino XIAO board.
