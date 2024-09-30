@@ -1,4 +1,4 @@
-]# USB Morse Decoder for straight key only.
+# USB Morse Decoder for straight key only.
 ## Just for fun and learning
 
 by
